@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style/style.css" />
+        <link id="theme" rel="stylesheet" href="style/light-theme.css" />
         <script src="script/script.js"></script>
         <title>Fill Warehouse - Advanced Calculator</title>
     </head>
@@ -12,6 +13,84 @@
         <div class="header">
             <h1 class="title">Travian Utility App</h1>
             <span id="version">01.10.20-ALPHA</span>
+            <div class="theme-toggler">
+                <label class="switch">
+                    <input
+                        type="checkbox"
+                        id="theme-toggle"
+                        oninput="toggleTheme(e)"
+                    />
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="container main">
+            <div class="container player">
+                <h2 id="player-name">Philosophes</h2>
+            </div>
+
+            <div class="container overview">
+                <div class="container table">
+                    <h2>Village overview</h2>
+                    <table class="village-table"></table>
+                </div>
+                <div class="container input">
+                    <table class="input-table">
+                        <!-- <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Nr. <span class="warehouse-icon"></span></th>
+                            <th>Level</th>
+                            <th>Nr. <span class="silo-icon"></span></th>
+                            <th>Level</th>
+                            <th>Layout</th>
+                            <th><span class="wood-prod-icon"></span></th>
+                            <th><span class="clay-prod-icon"></span></th>
+                            <th><span class="iron-prod-icon"></span></th>
+                            <th><span class="grain-prod-icon"></span></th>
+                        </tr>
+                        <tr>
+                            <td>New village:</td>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="village-name"
+                                    id="village-name"
+                                />
+                            </td>
+                            <td>
+                                <select
+                                    name="warehouse-level"
+                                    id="warehouse-level"
+                                >
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                </select>
+                            </td>
+                        </tr> -->
+                    </table>
+                </div>
+            </div>
         </div>
     </body>
 </html>
