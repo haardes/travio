@@ -1,5 +1,5 @@
 let SERVER = 1;
-let TRIBE = 'GAUL';
+let TRIBE = 'TEUTON';
 let BARRACKS = 20;
 let GREAT_BARRACKS = 20;
 let STABLES = 20;
@@ -187,9 +187,18 @@ function init() {
 function arrayMult(origin, multi) {
 	let temp = [];
 	if (Array.isArray(multi)) {
-		console.log('Array!');
+		temp = origin.map((x, i) => x * (multi[i] ? multi[i] : 1));
 	} else if (Number.isInteger(multi)) {
 		temp = origin.map((x) => x * 3);
+	}
+
+	return temp;
+}
+
+function arrayAdd(origin, add) {
+	let temp = [];
+	if (Array.isArray(add)) {
+		temp = origin.map((x, i) => x + (add[i] ? add[i] : 0));
 	}
 
 	return temp;
@@ -208,6 +217,46 @@ function calculateCost() {
 	for (let i = 0; i < greatInputs.length; i++) {
 		greatArray.push(parseInt(greatInputs[i].value));
 	}
+
+	let cost, troops;
+
+	if (TRIBE === 'GAUL') {
+		cost = GAUL_COST;
+		troops = GAUL_TROOPS;
+	} else if (TRIBE === 'ROMAN') {
+		cost = ROMAN_COST;
+		troops = ROMAN_TROOPS;
+	} else if (TRIBE === 'TEUTON') {
+		cost = TEUTON_COST;
+		troops = TEUTON_TROOPS;
+	}
+
+	let wood = arrayAdd(arrayMult(regArray, cost[0]), arrayMult(arrayMult(greatArray, 3), cost[0])).reduce(
+		(acc, curr) => {
+			return acc + curr;
+		}
+	);
+	let clay = arrayAdd(arrayMult(regArray, cost[1]), arrayMult(arrayMult(greatArray, 3), cost[1])).reduce(
+		(acc, curr) => {
+			return acc + curr;
+		}
+	);
+	let iron = arrayAdd(arrayMult(regArray, cost[2]), arrayMult(arrayMult(greatArray, 3), cost[2])).reduce(
+		(acc, curr) => {
+			return acc + curr;
+		}
+	);
+	let crop = arrayAdd(arrayMult(regArray, cost[3]), arrayMult(arrayMult(greatArray, 3), cost[3])).reduce(
+		(acc, curr) => {
+			return acc + curr;
+		}
+	);
+
+	document.getElementById('result-wood').innerHTML = wood;
+	document.getElementById('result-clay').innerHTML = clay;
+	document.getElementById('result-iron').innerHTML = iron;
+	document.getElementById('result-crop').innerHTML = crop;
+	document.getElementById('result-sum').innerHTML = wood + clay + iron + crop;
 }
 
 function populateTroopInput() {

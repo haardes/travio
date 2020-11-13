@@ -111,7 +111,7 @@ body {
 }
 
 .result > div {
-	flex: 0 0 25%;
+	flex: 0 0 20%;
 	display: flex;
 	justify-content: space-around;
 }
@@ -119,6 +119,13 @@ body {
 .result > div > img {
 	width: 24px;
 	height: 18px;
+}
+
+.result > div > i {
+	background-image: url('https://gpack.travian.com/20b0b1f1/mainPage/img_ltr/a/carry.gif');
+	height: 12px;
+	width: 13px;
+	align-self: center;
 }
 
 .result > div > p {

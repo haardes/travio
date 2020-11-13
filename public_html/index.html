@@ -10,8 +10,8 @@
 	</head>
 	<body>
 		<div class="header">
-			<h1 class="title">Travian Utility App</h1>
-			<span id="version">01.10.20-ALPHA</span>
+			<h1 class="title">Queue Calculator</h1>
+			<!-- <span id="version">01.10.20-ALPHA</span> -->
 			<div class="theme-toggler">
 				<label class="switch">
 					<input type="checkbox" id="theme-toggle" oninput="toggleTheme(e)" />
@@ -26,8 +26,8 @@
 					<p class="server">Server:</p>
 
 					<select class="server" name="server" id="server">
-						<option value="1" selected="selected">T4 1x</option>
-						<option value="3">T4 3x</option>
+						<option value="1">T4 1x</option>
+						<option value="3" selected="selected">T4 3x</option>
 						<option value="5">T4 5x</option>
 						<option value="10">T4 10x</option>
 					</select>
@@ -37,9 +37,9 @@
 					<p class="tribe">Tribe:</p>
 
 					<select name="tribe" id="tribe" class="tribe">
-						<option value="GAUL" selected="selected">Gaul</option>
+						<option value="GAUL">Gaul</option>
 						<option value="ROMAN">Roman</option>
-						<option value="TEUTON">Teuton</option>
+						<option value="TEUTON" selected="selected">Teuton</option>
 					</select>
 				</div>
 
@@ -124,10 +124,12 @@
 				<div><img src="https://gpack.travian.com/20b0b1f1/mainPage/img_ltr/general/resources/clay_small.png" /></div>
 				<div><img src="https://gpack.travian.com/20b0b1f1/mainPage/img_ltr/general/resources/iron_small.png" /></div>
 				<div><img src="https://gpack.travian.com/20b0b1f1/mainPage/img_ltr/general/resources/crop_medium.png" /></div>
+				<div><i></i></div>
 				<div><p id="result-wood"></p></div>
 				<div><p id="result-clay"></p></div>
 				<div><p id="result-iron"></p></div>
 				<div><p id="result-crop"></p></div>
+				<div><p id="result-sum"></p></div>
 			</div>
 			<div class="troop-info"></div>
 		</div>
