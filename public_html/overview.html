@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style/style.css" />
+		<link id="theme" rel="stylesheet" href="style/light-theme.css" />
+		<script src="script/script.js"></script>
+		<title>Fill Warehouse - Advanced Calculator</title>
+	</head>
+
+	<body>
+		<input id="hidden-input" class="hidden" type="text" value="" />
+		<div class="header">
+			<h1 class="title">Travian Utility App</h1>
+			<span id="version">01.10.20-ALPHA</span>
+			<div class="theme-toggler">
+				<label class="switch">
+					<input type="checkbox" id="theme-toggle" oninput="toggleTheme(e)" />
+					<span class="slider round"></span>
+				</label>
+			</div>
+		</div>
+
+		<div class="container main">
+			<textarea name="paste" id="village-input" cols="30" rows="10"></textarea>
+			<button onclick="parseVillageInput()">Parse</button>
+			<div class="container player">
+				<h2 id="player-name">Philosophes</h2>
+			</div>
+
+			<div class="container overview">
+				<div class="container table">
+					<h2>Village overview</h2>
+					<table class="village-table">
+						<thead>
+							<tr>
+								<th rowspan="2">Village name</th>
+								<th colspan="2">Capacity</th>
+								<th colspan="4">Storage</th>
+								<th colspan="4">Production</th>
+							</tr>
+							<tr>
+								<th>
+									<img
+										src="https://gpack.travian.com/7b2b4596/mainPage/img_ltr/hud/topBar/header/stockBar/warehouse_medium.png"
+										alt="Warehouse capacity"
+									/>
+								</th>
+								<th>
+									<img
+										src="https://gpack.travian.com/7b2b4596/mainPage/img_ltr/hud/topBar/header/stockBar/granary_medium.png"
+										alt="Granary capacity"
+									/>
+								</th>
+								<th>
+									<img
+										src="https://gpack.travian.com/7b2b4596/mainPage/img_ltr/general/resources/lumber_small.png"
+										alt="Wood"
+									/>
+								</th>
+								<th>
+									<img
+										src="https://gpack.travian.com/7b2b4596/mainPage/img_ltr/general/resources/clay_small.png"
+										alt="Clay"
+									/>
+								</th>
+								<th>
+									<img
+										src="https://gpack.travian.com/7b2b4596/mainPage/img_ltr/general/resources/iron_small.png"
+										alt="Iron"
+									/>
+								</th>
+
+								<th>
+									<img
+										src="https://gpack.travian.com/7b2b4596/mainPage/img_ltr/general/resources/crop_medium.png"
+										alt="Crop"
+									/>
+								</th>
+								<th class="production">
+									<img
+										src="https://gpack.travian.com/7b2b4596/mainPage/img_ltr/general/resources/lumber_small.png"
+										alt="Wood production"
+									/>
+									<img
+										class="plus-icon"
+										src="https://gpack.travian.com/7b2b4596/mainPage/img_ltr/a/greenPlus-ltr.gif"
+										alt="Plus icon"
+									/>
+								</th>
+								<th class="production">
+									<img
+										src="https://gpack.travian.com/7b2b4596/mainPage/img_ltr/general/resources/clay_small.png"
+										alt="Clay production"
+									/>
+									<img
+										class="plus-icon"
+										src="https://gpack.travian.com/7b2b4596/mainPage/img_ltr/a/greenPlus-ltr.gif"
+										alt="Plus icon"
+									/>
+								</th>
+								<th class="production">
+									<img
+										src="https://gpack.travian.com/7b2b4596/mainPage/img_ltr/general/resources/iron_small.png"
+										alt="Iron production"
+									/>
+									<img
+										class="plus-icon"
+										src="https://gpack.travian.com/7b2b4596/mainPage/img_ltr/a/greenPlus-ltr.gif"
+										alt="Plus icon"
+									/>
+								</th>
+								<th class="production">
+									<img
+										src="https://gpack.travian.com/7b2b4596/mainPage/img_ltr/general/resources/crop_medium.png"
+										alt="Crop production"
+									/>
+									<img
+										class="plus-icon"
+										src="https://gpack.travian.com/7b2b4596/mainPage/img_ltr/a/greenPlus-ltr.gif"
+										alt="Plus icon"
+									/>
+								</th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+						<tfoot></tfoot>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
