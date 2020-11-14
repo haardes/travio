@@ -1,2 +1,3 @@
-# Travian-utility-app
- Webapp for MMO game Travian, providing utilies for efficient and effective gameplay
+# Travio
+
+Webapp for MMO game Travian, providing utilies for efficient and effective gameplay

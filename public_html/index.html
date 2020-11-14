@@ -4,122 +4,119 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style/calculator-style.css" />
-		<link id="theme" rel="stylesheet" href="style/light-theme.css" />
 		<script src="script/queueCalculator.js"></script>
 		<title>Queue Calculator</title>
 	</head>
 	<body>
 		<div class="header">
-			<h1 class="title">Queue Calculator</h1>
-			<a href="mailto:bugs.travio@gmail.com">Report bugs</a>
-			<!-- <span id="version">01.10.20-ALPHA</span> -->
-			<div class="theme-toggler">
-				<label class="switch">
-					<input type="checkbox" id="theme-toggle" oninput="toggleTheme(e)" />
-					<span class="slider round"></span>
-				</label>
-			</div>
+			<h1 class="title">TRAVIO</h1>
+			<p id="version">01.10.20-ALPHA</p>
+			<a id="bugs" href="mailto:bugs.travio@gmail.com">Report bugs</a>
 		</div>
 
 		<div class="center-container">
-			<div class="settings-container">
-				<div class="server-selector">
-					<p class="server">Server:</p>
-
-					<select class="server" name="server" id="server">
-						<option value="1">T4 1x</option>
-						<option value="3" selected="selected">T4 3x</option>
-						<option value="5">T4 5x</option>
-						<option value="10">T4 10x</option>
-					</select>
-				</div>
-
-				<div class="tribe-selector">
-					<p class="tribe">Tribe:</p>
-
-					<select name="tribe" id="tribe" class="tribe">
-						<option value="GAUL">Gaul</option>
-						<option value="ROMAN">Roman</option>
-						<option value="TEUTON" selected="selected">Teuton</option>
-					</select>
-				</div>
-
-				<div class="selector-group buildings">
-					<h1 class="group-title">Buildings</h1>
-
-					<div class="selector">
-						<p>Barracks</p>
-						<select name="barracks" id="barracks"></select>
+			<div class="container settings">
+				<h3 class="container-title">Settings</h3>
+				<div class="sett1">
+					<div class="custom-select">
+						<select name="server" id="server">
+							<option value="0">Server</option>
+							<option value="1">T4 1x</option>
+							<option value="3">T4 3x</option>
+							<option value="5">T4 5x</option>
+							<option value="10">T4 10x</option>
+						</select>
 					</div>
-
-					<div class="selector">
-						<p>Great Barracks</p>
-						<select name="great-barracks" id="great-barracks"></select>
-					</div>
-
-					<div class="selector">
-						<p>Stables</p>
-						<select name="stables" id="stables"></select>
-					</div>
-
-					<div class="selector">
-						<p>Great Stables</p>
-						<select name="great-stables" id="great-stables"></select>
-					</div>
-
-					<div class="selector">
-						<p>Workshop</p>
-						<select name="workshop" id="workshop"></select>
+					<div class="custom-select">
+						<select name="tribe" id="tribe">
+							<option value="0">Tribe</option>
+							<option value="GAUL">Gaul</option>
+							<option value="ROMAN">Roman</option>
+							<option value="TEUTON">Teuton</option>
+						</select>
 					</div>
 				</div>
-
-				<div class="selector-group misc">
-					<h1 class="group-title">Miscellaneous</h1>
-
-					<div class="selector">
-						<p>Infantry helmet</p>
-						<select name="inf-helmet" id="inf-helmet">
-							<option value="1" selected="selected">-</option>
-							<option value="0.9">10%</option>
-							<option value="0.85">15%</option>
-							<option value="0.8">20%</option>
-						</select>
+				<div class="buildings">
+					<h3 class="container-title">Buildings</h3>
+					<div class="row">
+						<div class="custom-select long level">
+							<p class="custom-select-name">Barracks</p>
+							<select name="barracks" id="barracks"></select>
+						</div>
+						<div class="custom-select long level">
+							<p class="custom-select-name">Great Barracks</p>
+							<select name="great-barracks" id="great-barracks"></select>
+						</div>
 					</div>
 
-					<div class="selector">
-						<p>Cavalry helmet</p>
-						<select name="cav-helmet" id="cav-helmet">
-							<option value="1" selected="selected">-</option>
-							<option value="0.9">10%</option>
-							<option value="0.85">15%</option>
-							<option value="0.8">20%</option>
-						</select>
+					<div class="row">
+						<div class="custom-select long level">
+							<p class="custom-select-name">Stables</p>
+							<select name="stables" id="stables"></select>
+						</div>
+						<div class="custom-select long level">
+							<p class="custom-select-name">Great Stables</p>
+							<select name="great-stables" id="great-stables"></select>
+						</div>
 					</div>
 
-					<div class="selector">
-						<p>Artifact</p>
-						<select name="artifact" id="artifact">
-							<option value="1" selected="selected">-</option>
-							<option value="0.75">75%</option>
-							<option value="0.5">50%</option>
-						</select>
+					<div class="row">
+						<div class="custom-select long level">
+							<p class="custom-select-name">Workshop</p>
+							<select name="workshop" id="workshop"></select>
+						</div>
 					</div>
-
-					<div class="selector">
-						<p>Recruitment</p>
-						<select name="recruitment" id="recruitment">
-							<option value="1" selected="selected">-</option>
-							<option value="0.98">2%</option>
-							<option value="0.96">4%</option>
-							<option value="0.94">6%</option>
-							<option value="0.92">8%</option>
-							<option value="0.90">10%</option>
-						</select>
+				</div>
+				<div class="misc">
+					<h3 class="container-title">Miscellaneous</h3>
+					<div class="row">
+						<div class="custom-select long">
+							<p class="custom-select-name">Infantry helmet</p>
+							<select name="inf-helmet" id="inf-helmet">
+								<option value="0">-</option>
+								<option value="1">-</option>
+								<option value="0.9">10%</option>
+								<option value="0.85">15%</option>
+								<option value="0.8">20%</option>
+							</select>
+						</div>
+						<div class="custom-select long">
+							<p class="custom-select-name">Cavalry helmet</p>
+							<select name="cav-helmet" id="cav-helmet">
+								<option value="0">-</option>
+								<option value="1">-</option>
+								<option value="0.9">10%</option>
+								<option value="0.85">15%</option>
+								<option value="0.8">20%</option>
+							</select>
+						</div>
+						<div class="custom-select long">
+							<p class="custom-select-name">Artifact</p>
+							<select name="artifact" id="artifact">
+								<option value="0">-</option>
+								<option value="1">-</option>
+								<option value="0.75">75%</option>
+								<option value="0.5">50%</option>
+							</select>
+						</div>
+						<div class="custom-select long">
+							<p class="custom-select-name">Recruitment</p>
+							<select name="recruitment" id="recruitment">
+								<option value="0">-</option>
+								<option value="1">-</option>
+								<option value="0.98">2%</option>
+								<option value="0.96">4%</option>
+								<option value="0.94">6%</option>
+								<option value="0.92">8%</option>
+								<option value="0.90">10%</option>
+							</select>
+						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="troop-input"></div>
+			<div class="container troops"></div>
+			<!-- <div class="troop-input"></div> -->
 			<div class="result">
 				<div>Troop</div>
 				<div class="sum-resource">
