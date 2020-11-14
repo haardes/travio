@@ -101,7 +101,7 @@ body {
 .result {
 	background-color: #484848;
 	border: 1px solid lightgray;
-	flex: 0 0 50%;
+	flex: 0 0 80%;
 	color: white;
 	margin: 1%;
 	padding: 1%;
@@ -111,7 +111,7 @@ body {
 }
 
 .result > div {
-	flex: 0 0 20%;
+	flex: 1 0 14%;
 	display: flex;
 	justify-content: space-around;
 }
@@ -121,7 +121,7 @@ body {
 	height: 18px;
 }
 
-.result > div > i {
+.result > div > i:nth-of-type(1) {
 	background-image: url('https://gpack.travian.com/20b0b1f1/mainPage/img_ltr/a/carry.gif');
 	height: 12px;
 	width: 13px;
