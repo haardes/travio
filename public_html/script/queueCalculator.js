@@ -1,10 +1,10 @@
 let SERVER = 3;
 let TRIBE = 'TEUTON';
-let BARRACKS = 20;
-let GREAT_BARRACKS = 20;
-let STABLES = 20;
-let GREAT_STABLES = 20;
-let WORKSHOP = 20;
+let BARRACKS = 0;
+let GREAT_BARRACKS = 0;
+let STABLES = 0;
+let GREAT_STABLES = 0;
+let WORKSHOP = 0;
 let INF_HELMET = 1;
 let CAV_HELMET = 1;
 let RECRUITMENT = 1;
@@ -177,6 +177,9 @@ let ROMAN_TROOPS = [
 		building: 'workshop',
 	},
 ];
+let NUMBER_FORMAT = {
+	separator: ',',
+};
 
 function init() {
 	populateLevelSelectors();
@@ -252,11 +255,82 @@ function calculateCost() {
 		}
 	);
 
+	let barrack = 0,
+		greatBarrack = 0,
+		stables = 0,
+		greatStables = 0,
+		workshop = 0;
+
+	troops.forEach((troop, index) => {
+		if (troop.building === 'barracks') {
+			barrack += calculateTime(troop, regArray[index]);
+			greatBarrack += calculateTime(troop, greatArray[index], true);
+		} else if (troop.building === 'stables') {
+			stables += calculateTime(troop, regArray[index]);
+			greatStables += calculateTime(troop, greatArray[index], true);
+		} else if (troop.building === 'workshop') {
+			workshop += calculateTime(troop, regArray[index]);
+		}
+	});
+
 	document.getElementById('result-wood').innerHTML = wood;
 	document.getElementById('result-clay').innerHTML = clay;
 	document.getElementById('result-iron').innerHTML = iron;
 	document.getElementById('result-crop').innerHTML = crop;
 	document.getElementById('result-sum').innerHTML = wood + clay + iron + crop;
+
+	document.getElementById('result-barracks').innerHTML = formatTime(barrack);
+	document.getElementById('result-gb').innerHTML = formatTime(greatBarrack);
+	document.getElementById('result-stables').innerHTML = formatTime(stables);
+	document.getElementById('result-gs').innerHTML = formatTime(greatStables);
+	document.getElementById('result-workshop').innerHTML = formatTime(workshop);
+}
+
+function calculateTime(troop, amount, great) {
+	let levelMult = 1;
+	let helmet = 1;
+
+	if (troop.building === 'barracks') {
+		if (great) {
+			levelMult = Math.pow(0.9, GREAT_BARRACKS - 1);
+		} else {
+			levelMult = Math.pow(0.9, BARRACKS - 1);
+		}
+
+		helmet = INF_HELMET;
+	} else if (troop.building === 'stables') {
+		if (great) {
+			levelMult = Math.pow(0.9, GREAT_STABLES - 1);
+		} else {
+			levelMult = Math.pow(0.9, STABLES - 1);
+		}
+		helmet = CAV_HELMET;
+	} else if (troop.building === 'workshop') {
+		levelMult = Math.pow(0.9, WORKSHOP - 1);
+	}
+
+	return (troop.time * amount * levelMult * ARTIFACT * RECRUITMENT * helmet) / SERVER;
+}
+
+function formatTime(seconds) {
+	let hr = Math.floor(seconds / (60 * 60));
+	let min = hr > 0 ? Math.floor((seconds - hr * 60 * 60) / 60) : Math.floor(seconds / 60);
+	let sec = (min > 0 ? (hr > 0 ? seconds - hr * 60 * 60 - min * 60 : seconds - min * 60) : seconds).toFixed(0);
+	let timeString = '';
+
+	[hr, min, sec].forEach((x, index) => {
+		if (x < 10) {
+			timeString += '0' + x.toString();
+		} else {
+			timeString += x.toString();
+		}
+
+		if (index < 2) {
+			timeString += ':';
+		}
+	});
+
+	return timeString;
 }
 
 function populateTroopInput() {
@@ -541,6 +615,8 @@ function onSelect(target) {
 			ARTIFACT = target.options[target.selectedIndex].value;
 			break;
 	}
+
+	calculateCost();
 }
 
 window.onload = () => {
