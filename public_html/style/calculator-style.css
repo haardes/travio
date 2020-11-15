@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Roboto&display=swap');
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -6,132 +7,22 @@
 
 body {
 	min-height: 100vh;
-	background-color: #828282;
+	background-color: #393d3f;
+	color: #f6f2c7;
+	font-family: 'Roboto', sans-serif;
 }
 
-.center-container {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
+p {
+	font-size: 0.9em;
 }
 
-.settings-container {
-	background-color: #484848;
-	border: 1px solid lightgray;
-	flex: 0 0 50%;
-	color: white;
-	padding: 1%;
+h1 {
+	font-size: 1.7em;
 }
 
-.server,
-.tribe {
-	display: inline;
-}
-
-.selector-group {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.group-title {
-	flex: 1 0 100%;
-	text-align: center;
-}
-
-.input-type {
-	flex: 0 0 50%;
-	text-align: center;
-}
-
-.selector {
-	display: flex;
-	flex: 1 0 50%;
-	justify-content: space-around;
-}
-
-.selector > p {
-	flex: 0 0 50%;
-	text-align: center;
-}
-
-.selector:last-child {
-	flex: 0 0 50%;
-}
-
-.selector > select {
-	min-width: 15%;
-}
-
-.troop-input {
-	background-color: #484848;
-	border: 1px solid lightgray;
-	flex: 0 0 80%;
-	color: white;
-	margin: 1%;
-	padding: 1%;
-}
-
-.input-group {
-	width: 50%;
-	margin: auto;
-}
-
-.grid-container {
-	display: grid;
-	text-align: center;
-}
-
-.column-name:nth-child(1) {
-	grid-column: 3;
-}
-
-.column-name:nth-child(2) {
-	grid-column: 4;
-}
-
-.column-name:only-of-type {
-	grid-column: 4;
-}
-
-.grid-container > input[type='number'] {
-	width: 35%;
-	margin: auto;
-}
-
-.result {
-	background-color: #484848;
-	border: 1px solid lightgray;
-	flex: 0 0 80%;
-	color: white;
-	margin: 1%;
-	padding: 1%;
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-}
-
-.result > div {
-	flex: 1 0 14%;
-	display: flex;
-	justify-content: space-around;
-}
-
-.result > div > img {
-	width: 24px;
-	height: 18px;
-}
-
-.result > div > i:nth-of-type(1) {
-	background-image: url('https://gpack.travian.com/20b0b1f1/mainPage/img_ltr/a/carry.gif');
-	height: 12px;
-	width: 13px;
-	align-self: center;
-}
-
-.result > div > p {
-	padding: 1%;
-	margin-top: 5%;
-	background-color: #828282;
+h3 {
+	font-size: 1.1em;
+	font-style: thin;
 }
 
 /*** Header ***/
@@ -139,91 +30,281 @@ body {
 .header {
 	width: 100%;
 	display: flex;
+	padding-bottom: 1%;
+	background-color: #27292b;
+	box-shadow: 0 5px 10px 3px #333333;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
 }
 
 .title {
-	flex: 1 0 90%;
+	flex: 1 0 100%;
+	text-align: center;
+	font-size: 4em;
+	font-family: 'Architects Daughter', cursive;
+}
+
+#version {
+	flex: 1 0 100%;
+	text-align: center;
+	font-size: 0.7em;
+}
+
+#bugs {
+	color: #e2ebd6;
+	font-size: 0.8em;
+}
+
+/*** Header ***/
+
+/*** APPLICATION ***/
+
+.center-container {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+/* Settings */
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	width: 40%;
+	background-color: #2c3840;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 3px #333333;
+	text-align: center;
+	margin: 1%;
+}
+
+.container-title {
+	flex: 1 0 100%;
+	padding: 1%;
+}
+
+.sett1 {
+	flex: 1 0 20%;
+	text-align: center;
+	padding: 1%;
+}
+
+.buildings {
+	flex: 1 0 80%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.row {
+	flex: 1 0 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.misc {
+	flex: 1 0 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* Settings */
+
+/* Troop input */
+
+.troops {
+	justify-content: center;
+	padding-bottom: 1%;
+}
+
+.troops > .row {
+	flex: 0 0 80%;
+	align-items: flex-end;
+}
+
+.troops > .row > p {
+	flex: 0 0 30%;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+/* Troop input */
+
+/*** APPLICATION ***/
+
+.result {
+	flex: 0 0 90%;
+	display: flex;
+	margin: auto;
+	justify-content: space-around;
+}
+
+.result > div {
+	display: flex;
+	flex: 0 0 40%;
+	justify-content: space-around;
+}
+
+.column {
+	flex: 0 0 15%;
+}
+
+.resources > .column > .img-cont {
+	width: 100%;
+	height: 28px;
+}
+
+.time > .column > .img-cont > img:not(.time-icon) {
+	width: 48px;
+	height: 32px;
+}
+
+#sum-icon {
+	background-image: url('https://gpack.travian.com/20b0b1f1/mainPage/img_ltr/a/carry.gif');
+	background-position: 0 0;
+	background-size: cover;
+	height: 14px;
+	width: 13px;
+	margin: auto;
+}
+
+/* Custom input */
+.custom-input {
+	width: 15%;
+}
+
+.custom-input > input {
+	background-color: #27292b;
+	border: none;
+	border-radius: 15px;
+	width: 64px;
+	height: 20px;
+	color: #f6f2c7;
 	text-align: center;
 }
 
-.version {
-	flex: 1 0 10%;
+.custom-input > input:focus {
+	outline: none;
+	box-shadow: 0px 0px 4px #747c81;
 }
 
-.theme-toggler {
-	flex: 0 0 90%;
-	display: flex;
-	justify-content: flex-end;
+/* it will support chrome and firefox */
+.custom-input input[type='number']::-webkit-inner-spin-button,
+.custom-input input[type='number']::-webkit-outer-spin-button {
+	-webkit-appearance: none;
 }
+/* Custom input */
 
-/*** Theme toggler ***/
-
-/* The switch - the box around the slider */
-.switch {
+/* Custom select */
+/* The container must be positioned relative: */
+.custom-select {
 	position: relative;
-	display: inline-block;
-	width: 60px;
-	height: 34px;
+	font-family: Arial;
+	padding: 1%;
+	border-radius: 15px;
 }
 
-/* Hide default HTML checkbox */
-.switch input {
-	opacity: 0;
-	width: 0;
-	height: 0;
+.custom-select.long {
+	width: 25%;
 }
 
-/* The slider */
-.slider {
-	position: absolute;
-	cursor: pointer;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: #ccc;
-	-webkit-transition: 0.4s;
-	transition: 0.4s;
+.custom-select-name {
+	margin-bottom: 5%;
 }
 
-.slider:before {
+.custom-select select {
+	display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+	background-color: #27292b;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
 	position: absolute;
 	content: '';
-	height: 26px;
-	width: 26px;
-	left: 4px;
-	bottom: 4px;
-	background-color: white;
-	-webkit-transition: 0.4s;
-	transition: 0.4s;
+	top: 10px;
+	right: 10px;
+	width: 0;
+	height: 0;
+	border: 6px solid transparent;
+	border-color: #fff transparent transparent transparent;
 }
 
-input:checked + .slider {
-	background-color: #333322;
+/* Style the arrow inside the select element for level selects: */
+.buildings > .row > .long > .select-selected:after {
+	position: absolute;
+	content: '';
+	top: 36px;
+	right: 10px;
+	width: 0;
+	height: 0;
+	border: 6px solid transparent;
+	border-color: #fff transparent transparent transparent;
 }
 
-input:focus + .slider {
-	box-shadow: 0 0 1px #333322;
+/* Style the arrow inside the select element for misc selects: */
+.misc > .row > .long > .select-selected:after {
+	position: absolute;
+	content: '';
+	top: 40px;
+	right: 10px;
+	width: 0;
+	height: 0;
+	border: 6px solid transparent;
+	border-color: #fff transparent transparent transparent;
 }
 
-input:checked + .slider:before {
-	-webkit-transform: translateX(26px);
-	-ms-transform: translateX(26px);
-	transform: translateX(26px);
+/* Point the arrow upwards when the select box is open (active) for level selects: */
+.buildings > .row > .long > .select-selected.select-arrow-active:after {
+	border-color: transparent transparent #fff transparent;
+	top: 28px;
 }
 
-/* Rounded sliders */
-.slider.round {
-	border-radius: 34px;
+/* Point the arrow upwards when the select box is open (active) for misc selects: */
+.misc > .row > .long > .select-selected.select-arrow-active:after {
+	border-color: transparent transparent #fff transparent;
+	top: 32px;
 }
 
-.slider.round:before {
-	border-radius: 50%;
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+	border-color: transparent transparent #fff transparent;
+	top: 2px;
 }
 
-/*** Theme toggler ***/
+/* style the items (options), including the selected item: */
+.select-items div,
+.select-selected {
+	color: #ffffff;
+	padding: 2px 8px;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+	cursor: pointer;
+}
 
-/*** Header ***/
+/* Style items (options): */
+.select-items {
+	position: absolute;
+	background-color: #27292b;
+	top: 100%;
+	left: 0;
+	right: 0;
+	z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+	display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Custom select */
